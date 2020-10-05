@@ -2,32 +2,29 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'package:bootcamp_google_flutter/category.dart';
+
+const _categoryName = 'Cake';
+const _categoryIcon = Icons.cake;
+const _categoryColor = Colors.green;
+
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('hello retangle'),
-        ),
-        body: HelloRectangle(),
-      ),
-    ),
-  );
+  runApp(UnitConverterApp());
 }
 
-class HelloRectangle extends StatelessWidget {
+class UnitConverterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.greenAccent,
-        height: 400.0,
-        width: 300.0,
-        child: Center(
-          child: Text(
-            'hello',
-            style: TextStyle(fontSize: 32.0),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'unit converter',
+      home: Scaffold(
+        backgroundColor: Colors.green[100],
+        body: Center(
+          child: Category(
+            name: _categoryName,
+            color: _categoryColor,
+            iconLocation: _categoryIcon,
           ),
         ),
       ),
